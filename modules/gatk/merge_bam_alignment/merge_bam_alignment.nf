@@ -23,7 +23,7 @@ process GATK_MERGE_BAM_ALIGNMENT {
     path("${sampleId}.mapped.merged.bam")
 
     script:
-    bwa_commandline = "bwa mem -K 100000000 -p -v 3 -t 8 -Y ${ref_fasta}"
+    bwa_commandline = "bwa mem -M -K 100000000 -p -v 3 -t 8 -Y ${ref_fasta}"
 
     """
     ${params.gatk_path} --java-options "-Dsamjdk.compression_level=${params.compression_level} ${params.java_opts}" \
