@@ -28,8 +28,8 @@ fastq_params_ch = channel.fromPath(fastq_files_list)
         .map { line ->
             cols = line.tokenize('\t')
             [
-                    file(cols[2]).path, // fastq_1
-                    file(cols[3]).path, // fastq_2
+                    cols[2], // fastq_1
+                    cols[3], // fastq_2
                     cols[6], // run_date
                     cols[1], // sample_name
                     cols[4], // library_name
