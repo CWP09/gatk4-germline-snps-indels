@@ -10,11 +10,7 @@ process BWA_GET_BWA_VERSION {
     script:
 
     """
-
-    // ${params.bwa_path} 2>&1  \
-    // | grep -e '^Version'  \
-    // | sed 's/Version: //' \
-    // | tr -d '\n'
+    echo 0.7.15-r1140
     """
 
     stub:
