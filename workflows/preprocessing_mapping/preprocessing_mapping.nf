@@ -11,7 +11,7 @@ ref_amb = file("${params.fasta}.64.amb")
 ref_ann = file("${params.fasta}.64.ann")
 ref_bwt = file("${params.fasta}.64.bwt")
 ref_pac = file("${params.fasta}.64.pac")
-ref_sa = file("${params.fasta}.sa")
+ref_sa = file("${params.fasta}.64.sa")
 ref_fasta_fai = file("${params.fasta}.fai")
 ref_dict = file(params.fasta.replace(".fasta", ".dict"))
 
