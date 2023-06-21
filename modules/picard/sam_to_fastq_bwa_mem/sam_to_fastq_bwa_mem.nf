@@ -37,12 +37,12 @@ process PICARD_SAM_TO_FASTQ_BWA_MEM {
 	    -jar ${params.picard_path} \
         SamToFastq \
         INPUT=${input_unmapped_bam} \
-        FASTQ=${ref_fasta} \
+        FASTQ=/dev/stdout \
         INTERLEAVE=true \
         NON_PF=true \
     | \
 		${params.bwa_path} mem \
-		 -M -K 100000000 -p -v 3 -t 16 -Y ${ref_fasta} -  2> >(tee ${sampleId}.bwa.stderr.log >&2) \
+		 -M -K 100000000 -p -v 3 -t 16 -Y ${ref_fasta} /dev/stdin -  2> >(tee ${sampleId}.bwa.stderr.log >&2) \
     | \
 		${params.samtools_path} view -1 - > ${sampleId}.mapped.bam
     """
