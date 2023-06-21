@@ -10,7 +10,7 @@ process BWA_GET_BWA_VERSION {
     script:
 
     """
-    echo 0.7.15-r1140
+    echo 0.7.15-r1140 | tr -d '\n'
     """
 
     stub:
